@@ -5,12 +5,12 @@ class SessionsController < ApplicationController
   def create
   	@user = User.where(:email => params[:session][:email]).first
   	if @user && @user.authenticate(params[:session][:password])
-  		flash[:success] = "HELLO " + @user.name + " You have logged in"
+  		flash[:success] = "Hello, " + @user.name.capitalize + ", you have logged in!"
   		session[:remember_token] = @user.id
   		@current_user = @user
   		redirect_to root_path
   	else
-  		flash[:error] = "Invalid email/password combination"
+  		flash[:error] = "Invalid email/password combination. Please try again."
   		render 'new'
   		end
   	end

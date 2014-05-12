@@ -1,11 +1,11 @@
-<h1>All My Burritos!</h1>
+<h1>Here's a list of all the burritos!</h1>
 <p>I've got <%= @burritos.count %> burritos ready to go!</p>
 
 <% @burritos.each do |b| %>
   <ul>
     <li>
       <%= link_to burrito_path b do %>
-        <strong><%= b.name %>'s burrito.  Don't touch!!!</strong>
+        <strong><%= b.name %>'s burrito.</strong>
       <% end %>
       <ul>
         <% b.ingredients.each do |i| %>

@@ -1,7 +1,7 @@
 <%= form_for @burrito do |f| %>
   Name: <%= f.text_field :name %><br />
 
-  <%= collection_check_boxes :burrito, :ingredient_ids, @ingredients, :_id, :name %>
+  <%= collection_check_boxes :burrito, :ingredient_ids, @ingredients, :id, :name %>
 
   <%# @ingredients.each do |i| %>
     <%#= check_box_tag :ingredients %>
